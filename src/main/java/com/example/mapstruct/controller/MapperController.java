@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.mapstruct.mappers.EmployeeMapper;
+import com.example.mapstruct.model.Department;
 import com.example.mapstruct.model.Employee;
 import com.example.mapstruct.model.EmployeeDTO;
 
@@ -18,7 +19,10 @@ public class MapperController {
 	
 	@GetMapping("/convert")
 	public ResponseEntity<EmployeeDTO> convertEmployee(){
-		Employee emp = new Employee("name", "25", "department", "developer");
+		Department dept =new Department("software");
+		Employee emp = new Employee("name", "25", "department", "developer",dept);
+		
+		emp.setDepartmentName(dept);
 		EmployeeDTO dto = mapper.convertEmployee(emp);
 		return new ResponseEntity<>(dto,HttpStatus.OK);
 	}
@@ -26,7 +30,7 @@ public class MapperController {
 	@GetMapping("/convertDto")
 	public ResponseEntity<Employee> covnertEmployeeDTO(){
 		
-		EmployeeDTO dto = new EmployeeDTO("dto", "40", "software", "designation");
+		EmployeeDTO dto = new EmployeeDTO("dto", "40", "software", "designation","departmentName");
 		Employee emp = mapper.convertEmployeeDTO(dto);
 		return new ResponseEntity<>(emp,HttpStatus.OK);
 	}

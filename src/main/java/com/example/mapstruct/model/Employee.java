@@ -4,17 +4,19 @@ public class Employee {
 
 	private String name;
 	private String age;
-	private String department;
+	private String departmentName;
 	private String grade;
+	private Department department;
 	
 	
 	
-	public Employee(String name, String age, String department, String grade) {
+	public Employee(String name, String age, String departmentName, String grade,Department department) {
 		super();
 		this.name = name;
 		this.age = age;
-		this.department = department;
+		this.departmentName = departmentName;
 		this.grade = grade;
+		this.department = department;
 	}
 	public String getName() {
 		return name;
@@ -28,11 +30,11 @@ public class Employee {
 	public void setAge(String age) {
 		this.age = age;
 	}
-	public String getDepartment() {
-		return department;
+	public String getDepartmentName() {
+		return departmentName;
 	}
-	public void setDepartment(String department) {
-		this.department = department;
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
 	}
 	public String getGrade() {
 		return grade;
@@ -40,6 +42,13 @@ public class Employee {
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
+	public Department getDepartment() {
+		return department;
+	}
+	public void setDepartmentName(Department department) {
+		this.department = department;
+	}
+	
 	
 	
 }

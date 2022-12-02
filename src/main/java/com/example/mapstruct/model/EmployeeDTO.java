@@ -5,14 +5,15 @@ public class EmployeeDTO {
 	private String empAge;
 	private String department;
 	private String designation;
+	private String departmentName;
 	
-	
-	public EmployeeDTO(String empName, String empAge, String department, String designation) {
+	public EmployeeDTO(String empName, String empAge, String department, String designation,String departmentName) {
 		super();
 		this.empName = empName;
 		this.empAge = empAge;
 		this.department = department;
 		this.designation = designation;
+		this.departmentName = departmentName;
 	}
 	public String getEmpName() {
 		return empName;
@@ -37,6 +38,12 @@ public class EmployeeDTO {
 	}
 	public void setDesignation(String designation) {
 		this.designation = designation;
+	}
+	public String getDepartmentName() {
+		return departmentName;
+	}
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
 	}
 	
 	
