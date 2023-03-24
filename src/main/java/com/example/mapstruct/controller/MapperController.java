@@ -14,7 +14,7 @@ import com.example.mapstruct.model.EmployeeDTO;
 @RestController
 public class MapperController {
 
-	@Autowired
+	//@Autowired
 	protected EmployeeMapper mapper;
 	
 	@GetMapping("/convert")
